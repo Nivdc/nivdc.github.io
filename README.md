@@ -10,7 +10,8 @@
 我的解决办法是制作一个特殊的主页分发markdown渲染库和md文件，然后直接使用浏览器渲染md文件。  
 这个方法的几个小缺点在于:
 1. 由于没有构建过程，哪怕是加载一个极其简单的目录页也要下载大约128kb的依赖库文件。  
-2. 由于路由功能是在前端实现的，当访问文章的时候刷新页面的时候会导致404。
+2. 由于路由功能是在前端实现的，当访问文章的时候刷新页面的时候会导致404。应用到gituhb pages上面的时候，
+3. 由于单页面应用本身的特性，搜索引擎无法抓取完整的内容。由于这个原因我决定转换技术方向。
 
 在可预见的未来，也许我们最终还是要引入一个构建过程来解决文章分类的问题。  
 一个解决的思路是使用[git hooks](https://git-scm.com/book/zh/v2/%E8%87%AA%E5%AE%9A%E4%B9%89-Git-Git-%E9%92%A9%E5%AD%90)
@@ -20,6 +21,8 @@
 #### 使用技术
 * [Marked](https://marked.js.org/) - markdown渲染库
 * [Alpinejs](https://alpinejs.dev/) - modern jQuery
-<!-- * [octokit.js](https://github.com/octokit/octokit.js/) - github SDK -->
 * [giscus](https://giscus.app/zh-CN) - 利用 GitHub Discussions 实现的评论系统 (comming soon)
 * CDN服务提供商 - [ZSTATIC](https://zstatic.net/)
+
+<!-- * [octokit.js](https://github.com/octokit/octokit.js/) - github SDK -->
+<!-- 上面这个SDK在国内的网络环境下无法使用。 -->
