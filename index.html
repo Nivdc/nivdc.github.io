@@ -5,26 +5,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="index.css" />
         <script type="module" src="index.js"></script>
-        <script src="https://s4.zstatic.net/ajax/libs/marked/15.0.3/marked.min.js"></script>
-        <script defer src="https://s4.zstatic.net/ajax/libs/alpinejs/3.14.5/cdn.min.js"></script>
+        <script defer src="https://s4.zstatic.net/ajax/libs/alpinejs/3.14.8/cdn.min.js"></script>
         <title>Nivdc的博客</title>
     </head>
     <body x-data="body">
-        <header x-data="header" x-show="show">
-            <p>知之为知之，不知为不知。舞文弄墨者，无名小卒也。</p>
+        <header>
+            <p>不知为不知</p>
         </header>
-        <nav x-data="nav" x-show="show">
+        <nav x-data="nav">
             <button @click="clickButton($el)">文章列表</button>
             <button @click="clickButton($el)">草稿列表</button>
             <p x-text="info"></p>
             <template x-for="file in files" :key="file.name">
-                <button class="link-button" x-text="file.name" @click="clickFile(file)"></button>
+                <!-- <button class="link-button" x-text="file.name" @click="clickFile(file)"></button> -->
+                <a :href="file.href" target="_blank" rel="noopener noreferrer" x-text="file.name"></a>
             </template>
         </nav>
-        <main>
-            <article x-data="article" x-html="html" x-show="show">
-            </article>
-        </main>
         <footer>
             </br>
             </br>
