@@ -29,11 +29,10 @@ document.addEventListener('alpine:init', () => {
 
                     if(response && response.ok){
                         this.files = (await response.json()).filter(fileObject => fileObject.name.endsWith('.html'))
-                        this.files.forEach(fileObject => fileObject.href = `${hostname} / ${fileObject.html_url.split('contents')[1]}`)
+                        this.files.forEach(fileObject => fileObject.href = `${fileObject.url.split('contents')[1].split('?')[0]}`)
                     }else{
                         this.files = []
                     }
-
 
                     if(this.files.length === 0) this.info = "如果你看见这个，说明在这个列表下我还什么都没有写。";
                 },
