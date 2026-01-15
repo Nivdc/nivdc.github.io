@@ -1,29 +1,10 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="index.css" />
-        <script type="module" src="index.js"></script>
-        <script defer src="https://s4.zstatic.net/ajax/libs/alpinejs/3.14.8/cdn.min.js"></script>
-        <title>Nivdc的博客</title>
-    </head>
-    <body x-data="body">
-        <header>
-            <p>眺望不知洲</p>
-        </header>
-        <nav x-data="nav">
-            <button @click="clickButton($el)">文章列表</button>
-            <button @click="clickButton($el)">草稿列表</button>
-            <p x-text="info"></p>
-            <template x-for="file in files" :key="file.name">
-                <!-- <button class="link-button" x-text="file.name" @click="clickFile(file)"></button> -->
-                <a :href="file.href" target="_blank" rel="noopener noreferrer" x-text="file.name"></a>
-            </template>
-        </nav>
-        <footer>
-            </br>
-            </br>
-        </footer>
-    </body>
-</html>
+<h2>眺望不知洲</h1>
+
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <time datetime="{{ post.date | date_to_xmlschema }}">({{ post.date | date: "%Y-%m-%d" }})</time>
+    </li>
+  {% endfor %}
+</ul>
