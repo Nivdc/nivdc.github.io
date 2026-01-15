@@ -11,3 +11,9 @@ gist:
 kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge
+
+# # 集合 Collections
+collections:
+  posts:
+    output: true
+    permalink: /:year/:month/:day/:title.html
