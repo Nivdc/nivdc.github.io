@@ -11,6 +11,12 @@
         thead:empty, thead th:empty {display: none;}
         code{font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;}
     </style>
+
+    {% if page.custom_css %}
+    <style>
+        {{ page.custom_css | strip_newlines }}
+    </style>
+    {% endif %}
 </head>
 <body>
     {{ content }}

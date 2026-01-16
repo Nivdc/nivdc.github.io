@@ -1,5 +1,9 @@
 ---
 layout: default
+custom_css: |
+  ul li:last-child {
+    margin-bottom: 1rem;
+  }
 ---
 
 <h2>眺望不知洲</h2>
@@ -11,4 +15,28 @@ layout: default
       <time datetime="{{ post.date | date_to_xmlschema }}">({{ post.date | date: "%Y-%m-%d" }})</time>
     </li>
   {% endfor %}
+</ul>
+
+<h3>
+  博客外文章
+  <span style="color: #666; font-size: 0.9rem;"> - 这些文章也是我写的，但它们不是这个博客的一部分</span>
+</h3>
+<ul>
+<!--   <li><a href="#">示例文章 1</a> - 简介</li> -->
+  <li><a href="https://github.com/Nivdc/godot-miniyaml/blob/master/doc/FOR_YAML_BEGINNERS.md">FOR_YAML_BEGINNERS.md</a> - 给YAML初学者的介绍</li>
+</ul>
+
+<h3>
+  有趣的文章
+  <span style="color: #666; font-size: 0.9rem;"> - 这些文章可不是我写的，我偶尔修改其中的内容，你也喜欢的话就自己收藏起来吧</span>
+</h3>
+<ul>
+<!--   <li><a href="#">示例链接 1</a> - 简介</li> -->
+  <li><a href="https://www.zhihu.com/question/20275578/answer/26577791">面向对象编程的弊端是什么？ - invalid s的回答 - 知乎</a></li>
+  <li><a href="https://www.zhihu.com/question/55946453/answer/819535638">你是什么时候对暴雪彻底失望的？ - invalid s的回答 - 知乎</a></li>
+  <li><a href="https://zhuanlan.zhihu.com/p/58816847">辐射挽歌：永远不要背叛你的核心用户 - Necromanov的文章 - 知乎</a></li>
+  <li><a href="https://www.zhihu.com/question/46282905/answer/1087459979">游戏的汉化过程是怎样的？ - 真庭正宗的回答 - 知乎</a></li>
+  <li><a href="https://www.zhihu.com/question/21090429/answer/44109092">即时战略游戏（比如 WAR3）的 AI 是怎样实现的？ - 韦易笑的回答 - 知乎</a></li>
+  <li><a href="https://www.zhihu.com/question/28439311/answer/134801760">如何评价游戏 Cities: Skylines（《城市：天际线》）？ - 七的质数和的回答 - 知乎</a></li>
+  <li><a href="https://www.zhihu.com/question/286227542/answer/487968518">攻壳机动队中的“Stand alone complex”究竟是什么样的概念？ - 赵苟润的回答 - 知乎</a></li>
 </ul>
